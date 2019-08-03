@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>HealthCareFoods</title>
+  <title>HealthCareData</title>
 
   <!-- Bootstrap core CSS -->
 
@@ -49,19 +49,19 @@
   </nav> 
   <!-- End Navigation -->
 <!-- Header -->
-<h1>Eat Your Way to Health</h1>
+<h1>A Look at Health Care</h1>
 <div>
+<h3>Expenditure in Millions of US$</h3>
 
-<h3>Foods to Eat</h3>
-    {{consume_html}}
-    
+    {{health_index|safe}}
 </div>
 
 <div>
-<h3>Foods to Avoid</h3>
-    {{avoid_html}}
+    <h3>Expenditure Per Person in Thousands</h3>
     
-</div>
+        {{person_index|safe}}
+    </div>
+
 
 </body>
 </html>

@@ -12,10 +12,10 @@
 
   <!-- Bootstrap core CSS -->
 
-  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" >
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" >
  
   <!-- Custom styles for this template -->
-  <link href="{{ url_for('static', filename='css/heroic-features.css')}}">
+  <link href="{{ url_for('static', filename='css/heroic-features.css')}}" rel="stylesheet">
 </head>
 
 <body>
@@ -27,26 +27,27 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <!--<div class="collapse navbar-collapse" id="navbarResponsive">
+      <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
+          <!-- <li class="nav-item active">
             <a class="nav-link" href="#">Home
               <span class="sr-only">(current)</span>
             </a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="/data" target="_blank">Data</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="/health" target="_blank">Eat Your Way to Health</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
-          </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
-          </li>
+          </li> -->
         </ul>
-      </div> -->
+      </div>
     </div>
-  </nav>
+  </nav> 
+  <!-- End Navigation -->
 
   <!-- Page Content -->
   <div class="container">
@@ -57,7 +58,7 @@
       <p class="lead">The cost of healthcare in the United States increases year after year. Could
         changing our diet, what we eat and what we avoid eating, help reduce the healthcare cost?
          </p>
-      <a href="/health" class="btn btn-primary btn-lg" target="_blank">Let's get started</a>
+      <a href="/data" class="btn btn-primary btn-lg" target="_blank">Let's get started</a>
     </header>
 
     <!-- Page Features -->
@@ -65,12 +66,19 @@
 
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
-          
+          <h4 class="card-title">ETL</h4>
+          <img class="card-img-top" src="{{ url_for('static', filename='img/ETL-1.png') }}" alt="">
           <div class="card-body">
-            <h4 class="card-title">ETL</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+            
+            <p class="card-text"> The results from the
+              <a href='https://meps.ahrq.gov/mepstrends/home/index.html'>Medical Expenditure Panel Survey</a>
+            is publicly available.
+            </p>
+            <p>Total expenditure in millions and number of people in thousands was selected 
+              from the year 2002 to 2016 in the following categories: Gender, Education, Percieved health status.</p>
+            <p>Used MySQL to join tables and calculate expenditure per person.</p>
           </div>
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+          
           <!-- <div class="card-footer">
             <a href="#" class="btn btn-primary">Find Out More!</a>
           </div> -->
@@ -79,15 +87,16 @@
 
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
-         
+        <h4 class="card-title">Tech Stack</h4>
+          <img class="card-img-top" src="{{ url_for('static', filename='img/teck.png') }}" alt="">
           <div class="card-body">
-            <h4 class="card-title">Tech Stack</h4>
+            
             <div class="card-text">
               <p>MySQL * Tableau * Jupyter  HTML/CSS * Flask * Pandas  Bootstrap * VSC</p>
               <p>Thank you to Mory Bahar for sharing his API for Nutridigm.</p>
             </div>
           </div>
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+         
           <!-- <div class="card-footer">
             <a href="#" class="btn btn-primary">Find Out More!</a>
           </div> -->
@@ -96,17 +105,15 @@
 
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
-         
+          <h4 class="card-title">Next Steps</h4>
+          <img class="card-img-top" src="{{ url_for('static', filename='img/next.jpg') }}" alt="">
           <div class="card-body">
-            <h4 class="card-title">Next Steps</h4>
-            <p class="card-text">Use Machine Learn the data and using certain parameters
-            allow the user to asses thier health risk.  
+            
+            <p class="card-text">
+              rovide a form for the user to input certain parameters of health.
+              
             </p>
           </div>
-          <div class="card-img-top">
-          <img src="{{ url_for('static', filename='img/next.jpg') }}" alt="">
-          </div>
-
           <!-- <div class="card-footer">
             <a href="#" class="btn btn-primary">Find Out More!</a>
           </div> -->
@@ -115,16 +122,17 @@
 
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
-          
+        <h4 class="card-title">My Contact</h4>
+          <img class="card-img-top" src="{{ url_for('static', filename='img/contact.jpg')}}" alt="">
           <div class="card-body">
-            <h4 class="card-title">My Contact</h4>
+            
             <div class="card-text">
               <p>Phoenix, AZ</p>
               <p>623-363-7970</p>
               <p>dinshawdiana@gmail.com</p>
             </div>
           </div>
-          <img class="card-img-top" src="{{ url_for('static', filename='img/contact.jpg')}}" alt="">
+          
           
           <!-- <div class="card-footer">
             <a href="#" class="btn btn-primary">Find Out More!</a>
