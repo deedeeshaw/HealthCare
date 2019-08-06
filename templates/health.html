@@ -48,12 +48,26 @@
     </div>
   </nav> 
   <!-- End Navigation -->
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Jumbotron Header -->
+    <header class="jumbotron my-4">
+      <h1 class="display-3">Eat Your Way to Health</h1>
+      <!-- <p class="lead">The cost of healthcare in the United States increases year after year. Could
+        changing our diet, what we eat and what we avoid eating, help reduce the healthcare cost?
+         </p>
+      <a href="/data" class="btn btn-primary btn-lg" target="_blank">Let's get started</a> -->
+    </header>
 <!-- Header -->
-<h1>Eat Your Way to Health</h1>
+
 <div>
 
 <h3>Foods to Eat</h3>
-    {{consume_html}}
+    <ul>
+     <li>{{consume_html}}</li> 
+    </ul>
     
 </div>
 
@@ -62,6 +76,6 @@
     {{avoid_html}}
     
 </div>
-
+</div>
 </body>
 </html>
