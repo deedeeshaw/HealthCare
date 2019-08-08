@@ -58,7 +58,8 @@ from
 health h, num_health nu
 where h.Year = nu.Year);
 
-select * from per_person;
+select * from num_health
+;
 
 Update per_person
 SET 

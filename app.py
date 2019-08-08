@@ -50,6 +50,7 @@ def data():
 ######################################################################
 
 from config import api
+from health import problem_dd
 
 base_url="https://nutridigm-api-dev.azurewebsites.net"
 consume_url="/api/v1/nutridigm/topitemstoconsume?"
@@ -72,7 +73,8 @@ def food():
         avoid=a.split('; ')
         # print(consume)
         # print(avoid)
-        return render_template('health.html', consume_html=consume, avoid_html=avoid)
+        return render_template('health.html', problem_html=problem_dd(), consume_html=consume, 
+            avoid_html=avoid)
 
 
 if __name__=='__main__':

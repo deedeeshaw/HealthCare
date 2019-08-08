@@ -16,6 +16,13 @@
  
   <!-- Custom styles for this template -->
   <link href="{{ url_for('static', filename='css/heroic-features.css')}}" rel="stylesheet">
+
+  <!-- Dropdown -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
@@ -55,12 +62,34 @@
     <!-- Jumbotron Header -->
     <header class="jumbotron my-4">
       <h1 class="display-3">Eat Your Way to Health</h1>
-      <!-- <p class="lead">The cost of healthcare in the United States increases year after year. Could
-        changing our diet, what we eat and what we avoid eating, help reduce the healthcare cost?
+      <p class="lead"> Could changing our diet, what we eat and what we avoid eating, 
+        help reduce the healthcare cost?
          </p>
-      <a href="/data" class="btn btn-primary btn-lg" target="_blank">Let's get started</a> -->
+      <!-- <a href="/data" class="btn btn-primary btn-lg" target="_blank">Let's get started</a> -->
     </header>
-<!-- Header -->
+<!-- End JumbotronHeader -->
+
+<!-- Drop down button -->
+<div class="container">
+  <h2>Select a Health Problem</h2>
+  <!-- <p>The .dropdown class is used to indicate a dropdown menu.</p>
+  <p>Use the .dropdown-menu class to actually build the dropdown menu.</p>
+  <p>To open the dropdown menu, use a button or a link with a class of .dropdown-toggle and data-toggle="dropdown".</p>                                           -->
+  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+      Health Problems
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+        {% for problem in problem_html %}
+        <option value ="{{problem.prob_id}}">{{problem.prob_desc}}</option>
+        {% endfor %}
+      <!-- <li><a href="#">HTML</a></li>
+      <li><a href="#">CSS</a></li>
+      <li><a href="#">JavaScript</a></li> -->
+    </ul>
+  </div>
+</div>
+<!-- end dropdown button -->
 
 <div>
 
