@@ -8,7 +8,7 @@ itsdangerous==1.1.0
 Jinja2==2.10.1
 MarkupSafe==1.1.1
 # mkl-fft==1.0.12
-mkl-random==1.0.2
+# mkl-random==1.0.2
 numpy==1.16.4
 pandas==0.24.2
 python-dateutil==2.8.0
