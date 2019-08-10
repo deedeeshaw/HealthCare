@@ -1,10 +1,10 @@
 ######################################################################
-# IMPORT FLASK
+# IMPORT FLASK AND OTHER DEFECIENCIS
 ######################################################################
 from flask import Flask, render_template, request, redirect, jsonify
 import requests
 import pandas as pd
-
+from health import problem_dd
 ######################################################################
 # create app passing the __name__
 ######################################################################
@@ -49,32 +49,18 @@ def data():
 # EAT YOUR WAY TO HEALTH - FOOD API
 ######################################################################
 
-from config import api
-from health import problem_dd
-
-base_url="https://nutridigm-api-dev.azurewebsites.net"
-consume_url="/api/v1/nutridigm/topitemstoconsume?"
-avoid_url="/api/v1/nutridigm/topitemstoavoid?"
-
-problemId = 3
-
-query_consume=base_url + consume_url + f'subscriptionId={api}&problemId={problemId}&api_key={api}'
-
-query_avoid=base_url + avoid_url + f'subscriptionId={api}&problemId={problemId}&api_key={api}'
-
 @app.route("/health")
 def food():
-    consume_food = requests.get(query_consume).json()
-    for c in consume_food:
-        consume =c.split('; ')
+    # consume_food = requests.get(query_consume).json()
+    # for c in consume_food:
+    #     consume =c.split('; ')
     
-    avoid_food= requests.get(query_avoid).json()
-    for a in avoid_food:
-        avoid=a.split('; ')
+    # avoid_food= requests.get(query_avoid).json()
+    # for a in avoid_food:
+    #     avoid=a.split('; ')
         # print(consume)
         # print(avoid)
-        return render_template('health.html', problem_html=problem_dd(), consume_html=consume, 
-            avoid_html=avoid)
+        return render_template('health.html', problem_html=problem_dd())
 
 
 if __name__=='__main__':

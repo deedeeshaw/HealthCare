@@ -18,10 +18,10 @@
   <link href="{{ url_for('static', filename='css/heroic-features.css')}}" rel="stylesheet">
 
   <!-- Dropdown -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
 
 </head>
 
@@ -36,20 +36,14 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <!-- <li class="nav-item active">
-            <a class="nav-link" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li> -->
+          
           <li class="nav-item">
             <a class="nav-link" href="/data" target="_blank">Data</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/health" target="_blank">Eat Your Way to Health</a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li> -->
+          
         </ul>
       </div>
     </div>
@@ -59,52 +53,117 @@
   <!-- Page Content -->
   <div class="container">
 
-    <!-- Jumbotron Header -->
+  <!-- Jumbotron Header -->
     <header class="jumbotron my-4">
       <h1 class="display-3">Eat Your Way to Health</h1>
       <p class="lead"> Could changing our diet, what we eat and what we avoid eating, 
         help reduce the healthcare cost?
          </p>
-      <!-- <a href="/data" class="btn btn-primary btn-lg" target="_blank">Let's get started</a> -->
     </header>
 <!-- End JumbotronHeader -->
 
 <!-- Drop down button -->
 <div class="container">
   <h2>Select a Health Problem</h2>
-  <!-- <p>The .dropdown class is used to indicate a dropdown menu.</p>
-  <p>Use the .dropdown-menu class to actually build the dropdown menu.</p>
-  <p>To open the dropdown menu, use a button or a link with a class of .dropdown-toggle and data-toggle="dropdown".</p>                                           -->
-  <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-      Health Problems
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
+    <select name ="Health Problems" >
         {% for problem in problem_html %}
         <option value ="{{problem.prob_id}}">{{problem.prob_desc}}</option>
         {% endfor %}
-      <!-- <li><a href="#">HTML</a></li>
-      <li><a href="#">CSS</a></li>
-      <li><a href="#">JavaScript</a></li> -->
-    </ul>
-  </div>
+      </select>
+  
 </div>
 <!-- end dropdown button -->
+</br>
+ <!-- Page Features -->
+ <div class="row text-center">
 
-<div>
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100">
+        <h4 class="card-title"></h4>
+        <img class="card-img-top" src="{{ url_for('static', filename='img/consume.jpg') }}" alt="">
+       
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100">
+      <h4 class="card-title">Foods to Eat</h4>
+        
+        <div class="card-body">
+          
+          <div class="card-text">
+           
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100">
+        <h4 class="card-title"></h4>
+        <img class="card-img-top" src="{{ url_for('static', filename='img/avoid.jpg') }}" alt="">
+        <div class="card-body">
+        </div>
+       
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100">
+      <h4 class="card-title">Foods to Avoid</h4>
+      
+        <div class="card-body">
+          
+          <div class="card-text">
+           
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+
+  </div>
+  <!-- /.row page feature -->
+
+
+<!-- <div>
 
 <h3>Foods to Eat</h3>
     <ul>
-     <li>{{consume_html}}</li> 
+      {% for item in consume_html %}
+     <li>{{item}}</li> 
+     {% endfor %}
     </ul>
     
 </div>
 
 <div>
 <h3>Foods to Avoid</h3>
-    {{avoid_html}}
-    
-</div>
-</div>
+<ul>
+    {% for avoid in avoid_html %}
+   <li>{{avoid}}</li> 
+   {% endfor %}
+  </ul>
+  
+</div> -->
+
+</div> <!-- end container -->
+
+
+</br>
+</br>
+</br>
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Diana Dinshaw HealthCare 2019</p>
+    </div>
+  </footer>
+
+  
 </body>
+
+
 </html>
