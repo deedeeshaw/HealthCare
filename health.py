@@ -1,19 +1,26 @@
-# import requests
-# from config import api
-import csv
 
+import csv
+from flask import request
+
+#######################################################################
 # FUNCTION TO CREATE THE DROPDOWN MENU OF PROBLEMS
+######################################################################
 def problem_dd():
     problem_list = []
-    with open('static/data/problem.csv') as problem_file:
+    with open('static/data/health_problem.csv') as problem_file:
         problem = csv.reader(problem_file, delimiter=',')
 
         for row in problem:
             problem_list.append({'prob_id':row[0], 'prob_desc': row[1]})
         return problem_list
 
+#######################################################################
+# FUNCTION TO POPULATE THE CONSUME AND AVOID FOODS CARDS
+######################################################################
+def health_foods():
+    # problem_id = request.arg.get('p')
 
-
+    return
 
 
 

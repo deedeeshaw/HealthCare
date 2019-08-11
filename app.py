@@ -1,10 +1,11 @@
 ######################################################################
 # IMPORT FLASK AND OTHER DEFECIENCIS
 ######################################################################
-from flask import Flask, render_template, request, redirect, jsonify
-import requests
-import pandas as pd
+from flask import Flask, render_template, request
+# , redirect, jsonify
+from data import data_table, perperson_table
 from health import problem_dd
+
 ######################################################################
 # create app passing the __name__
 ######################################################################
@@ -22,35 +23,15 @@ def index():
 ######################################################################
 @app.route("/data")
 def data():
-    data_df = pd.read_csv("static/data/health.csv")
-    data = data_df.rename(columns={'All_persons': 'Total', 
-        'Less_than_high_school': '< High School', 'High_school': "High Schhol",
-        'Some_college': 'Some College', "Less_than_18": "Still in School",
-        "Excellent_health": "Excellent Health",
-        "VG_health": "Very Good Health", "Good_health": "Good Health",
-         "Fair_health": "Fair Health", "Poor_health": "Poor Health"})
-    data.set_index("Year", inplace=True)
-    data = data.applymap('{:,}'.format)
-    data_html = data.to_html().replace('\n', '')
+    
+    return render_template("data.html", data_index=data_table(), person_index=perperson_table())
   
-    per_person_df = pd.read_csv("static/data/per_person.csv")
-    per_person = per_person_df.rename(columns={'Per_person': 'Total per Person', 'per_Male': "Male", 'per_Female': "Female",
-                    'per_Less_than_high_school': '< High School', 'per_High_school': "High Schhol",
-                      'per_Some_college': 'Some College', "per_Less_than_18": "Still in School",
-                        "per_Excellent_health": "Excellent Health",
-                      "per_VG_health": "Very Good Health", "per_Good_health": "Good Health", "per_Fair_health": "Fair Health",
-                      "per_Poor_health": "Poor Health"})
-    per_person.set_index("Year", inplace=True)
-    person_html = per_person.to_html().replace('\n', '')
-   
-    return render_template("data.html", data_index=data_html, person_index=person_html)
-
 ######################################################################
 # EAT YOUR WAY TO HEALTH - FOOD API
 ######################################################################
 
 @app.route("/health")
-def food():
+def health():
     # consume_food = requests.get(query_consume).json()
     # for c in consume_food:
     #     consume =c.split('; ')
