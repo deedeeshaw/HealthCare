@@ -16,7 +16,7 @@ app = Flask(__name__)
 ######################################################################
 @app.route("/")
 def index():
-    return render_template('index.html')
+    return render_template('indexB.html')
 
 ######################################################################
 # DATA TABLE AND TABLEAU 
@@ -32,15 +32,7 @@ def data():
 
 @app.route("/health")
 def health():
-    # consume_food = requests.get(query_consume).json()
-    # for c in consume_food:
-    #     consume =c.split('; ')
-    
-    # avoid_food= requests.get(query_avoid).json()
-    # for a in avoid_food:
-    #     avoid=a.split('; ')
-        # print(consume)
-        # print(avoid)
+        
         return render_template('health.html', problem_html=problem_dd())
 
 

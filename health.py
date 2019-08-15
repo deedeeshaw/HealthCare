@@ -14,13 +14,7 @@ def problem_dd():
             problem_list.append({'prob_id':row[0], 'prob_desc': row[1]})
         return problem_list
 
-#######################################################################
-# FUNCTION TO POPULATE THE CONSUME AND AVOID FOODS CARDS
-######################################################################
-def health_foods():
-    # problem_id = request.arg.get('p')
 
-    return
 
 
 

@@ -5,9 +5,11 @@ def data_table():
     data_df = pd.read_csv("static/data/health.csv")
     data = data_df.rename(columns={'All_persons': 'Total Expense', 'Male': 'Male ******', 'Female': 'Female ******',
         'Less_than_high_school': '< High School', 'High_school': "High School",
-        'Some_college': 'Some College', "Less_than_18": "Still in School",
+        'Some_college': 'Some College', 
+        "Less_than_18": "Still in School",
         "Excellent_health": "Excellent Health",
-        "VG_health": "Very Good Health", "Good_health": "Good Health",
+        "VG_health": "Very Good Health",
+         "Good_health": "Good Health",
          "Fair_health": "Fair Health", "Poor_health": "Poor Health"})
     data.set_index("Year", inplace=True)
     pd.set_option('display.max_colwidth', 40000)
@@ -22,11 +24,14 @@ def data_table():
 
 def perperson_table():
     per_person_df = pd.read_csv("static/data/per_person.csv")
-    per_person = per_person_df.rename(columns={'Per_person': 'Total per Person', 'per_Male': "Male", 'per_Female': "Female",
+    per_person = per_person_df.rename(columns={'Per_person': 'Total per Person', 'per_Male': "Male ****",
+                   'per_Female': "Female ******",
                     'per_Less_than_high_school': '< High School', 'per_High_school': "High Schhol",
-                      'per_Some_college': 'Some College', "per_Less_than_18": "Still in School",
+                      'per_Some_college': 'Some College',
+                       "per_Less_than_18": "Still in School",
                         "per_Excellent_health": "Excellent Health",
-                      "per_VG_health": "Very Good Health", "per_Good_health": "Good Health", "per_Fair_health": "Fair Health",
+                      "per_VG_health": "Very Good Health", 
+                      "per_Good_health": "Good Health", "per_Fair_health": "Fair Health",
                       "per_Poor_health": "Poor Health"})
     per_person.set_index("Year", inplace=True)
     

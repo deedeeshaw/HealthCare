@@ -1,13 +1,7 @@
 
-// console.log('hello')
-// function handleChange() {
-//   var p = document.getElementById("problem");
- 
-//   console.log(p.value);
 
-// };
 function handleChange() {
-  d3.json("static/data/health_problem2.json").then (data => {
+  d3.json("static/data/health_problem.json").then (data => {
     console.log(data);
     
   // grab the value of the input field
