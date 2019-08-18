@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel='shortcut icon' href="{{ url_for('static', filename='img/favicon-16x16.png') }}">
+  <title>HealthCareFoods</title>
+
+  <!-- Bootstrap core CSS -->
+
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" >
+ 
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename='css/heroic-features.css')}}" rel="stylesheet">
+
+ <!-- app.js -->
+ <script src="https://d3js.org/d3.v5.min.js"></script>
+
+
+
+</head>
+
+<body>
+
+  <!-- Navigation Bar-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">HealthCare</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/data" target="_blank">Data Visualization</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/health" target="_blank">Eat Your Way to Health</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav> 
+  <!-- End Navigation -->
+
+  <!-- Page Content -->
+  <div class="container">
+
+  <!-- Jumbotron Header -->
+    <header class="jumbotron my-4">
+      <h1 class="display-3">Eat Your Way to Health</h1>
+      <p class="lead"> Could changing our diet, what<strong> we eat </strong>
+        and what <strong>we avoid eating</strong>, 
+        help <strong>reduce the health care cost</strong>?
+         </p>
+    </header>
+<!-- End JumbotronHeader -->
+
+<!-- Drop down button -->
+<div class="container">
+  <h2>Select a Health Problem</h2>
+    <select name ="" id='problem' onchange="handleChange()">
+        {% for problem in problem_html %}
+        <option value ="{{problem.prob_id}}">{{problem.prob_desc}}</option>
+        {% endfor %}
+      </select>
+  
+</div>
+<!-- end dropdown button -->
+</br>
+ <!-- Page Features -->
+ <div class="row text-center">
+  <!-- Foods to eat Image -->
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100">
+        <h4 class="card-title"></h4>
+        <img class="card-img-top" src="{{ url_for('static', filename='img/consume.jpg') }}" alt="">
+       
+      </div>
+    </div>
+    <!-- List of foods to consume -->
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100">
+      <h4 class="card-title">Foods to Eat</h4>
+        
+        <div class="card-body">
+          
+          <div class="card-text">
+            <div id="consume" type="text">
+           <!-- code for consuming food -->
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Foods to avoid Image -->
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100">
+        <h4 class="card-title"></h4>
+        <img class="card-img-top" src="{{ url_for('static', filename='img/avoid.jpg') }}" alt="">
+        <div class="card-body">
+        </div>
+       
+      </div>
+    </div>
+    <!-- List of foods to avoid -->
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100">
+      <h4 class="card-title">Foods to Avoid</h4>
+      
+        <div class="card-body">
+          
+          <div class="card-text" id="avoid">
+           <!-- code for food to avoid -->
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+
+  </div>
+  <!-- /.row page feature -->
+
+
+<!-- <div>
+
+<h3>Foods to Eat</h3>
+    <ul>
+      {% for item in consume_html %}
+     <li>{{item}}</li> 
+     {% endfor %}
+    </ul>
+    
+</div>
+
+<div>
+<h3>Foods to Avoid</h3>
+<ul>
+    {% for avoid in avoid_html %}
+   <li>{{avoid}}</li> 
+   {% endfor %}
+  </ul>
+  
+</div> -->
+
+</div> <!-- end container -->
+
+
+</br>
+</br>
+</br>
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Diana Dinshaw HealthCare 2019</p>
+    </div>
+  </footer>
+
+  <script src="{{url_for('static', filename='health.js')}}"></script>
+  
+</body>
+
+
+</html>

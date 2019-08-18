@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel='shortcut icon' href="{{ url_for('static', filename='img/favicon-16x16.png') }}">
+  <title>HealthCare</title>
+
+  <!-- Bootstrap core CSS -->
+
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" >
+ 
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename='css/heroic-features.css')}}" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">HealthCare</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/data" target="_blank">Data Visualization</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/health" target="_blank">Eat Your Way to Health</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav> 
+  <!-- End Navigation -->
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Jumbotron Header -->
+    <header class="jumbotron my-4">
+      <h1 class="display-3">A Look at Health Care</h1>
+      <p class="lead">The <strong>cost of healthcare </strong>in the United States is increasing year after year. 
+        What are the trends in the increasing cost? Does a person's <strong>gender, level of education or 
+        perceived health condition </strong>have an impact on the growing cost of healthcare?
+         </p>
+      <a href="/data" class="btn btn-primary btn-lg" target="_blank">Let's get started</a>
+    </header>
+
+    <!-- Page Features -->
+    <div class="row text-center">
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <h4 class="card-title">ETL</h4>
+          <img class="card-img-top" src="{{ url_for('static', filename='img/ETL-1.png') }}" alt="">
+          <div class="card-body">
+            
+            <p class="card-text"> The results from the
+              <a href='https://meps.ahrq.gov/mepstrends/home/index.html' target="_blank">Medical Expenditure Panel Survey</a>
+            is publicly available.
+            </p>
+            <p>Total expenditure in millions and number of people in thousands.
+            <p>Following categories: Gender, Education, Percieved health status for the years 2002 to 2016.</p>
+            <p>Using MySQL and Pandas the data was transformed and loaded into csv and json files.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+        <h4 class="card-title">Tech Stack</h4>
+          <img class="card-img-top" src="{{ url_for('static', filename='img/teck.png') }}" alt="">
+          <div class="card-body">
+            
+            <div class="card-text">
+              <p>MySQL * Pandas *  HTML/CSS * Bootstrap * Python * Flask  Tableau * Jupyter  * VSC</p>
+              <p>Thank you to Mory Bahar for sharing his API for Nutridigm.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <h4 class="card-title">Next Steps</h4>
+          <img class="card-img-top" src="{{ url_for('static', filename='img/next.jpg') }}" alt="">
+          <div class="card-body">
+            
+            <div class="card-text">
+             
+               <p> List the foods as bullet points.</p>
+               <p> Provide a form for the user to input a health condition of thier choice.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+        <h4 class="card-title">About Me</h4>
+          <img class="card-img-top" src="{{ url_for('static', filename='img/contact.jpg')}}" alt="">
+          <div class="card-body">
+            
+            <div class="card-text">
+              <p><strong>Leader: </strong>Developed standard 
+                  operating procedures (SOP), which communicated practice expectations 
+                  and maintained consistent results.</p>
+              
+              <p><strong>Communicator: </strong> Developed a 
+                  dashboard using SharePoint, which 
+                  made for more efficient navigation.</p>
+             
+               <p><strong>Team-player: </strong>Created surveys which collects data to improve and direct professional 
+                  development of team members.</p>
+                
+              <p><strong>Ongoing Learner: </strong>Acquired technical skills from the University of Arizona Data Analytics 
+                  Bootcamp. </p>
+              <p> ----------------- </p>
+              <!-- <p>Phoenix, AZ</p> -->
+              <p>623-363-7970</p>
+              <p>dinshawdiana@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- /.row page feature -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Diana Dinshaw HealthCare 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+</body>
+
+</html>

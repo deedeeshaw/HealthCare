@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel='shortcut icon' href="{{ url_for('static', filename='img/favicon-16x16.png') }}">
+  <title>HealthCareDataViz</title>
+
+  <!-- Bootstrap core CSS -->
+
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" >
+ 
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename='css/heroic-features.css')}}" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">HealthCare</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+         
+          <li class="nav-item">
+            <a class="nav-link" href="/data" target="_blank">Data Visualization</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/health" target="_blank">Eat Your Way to Health</a>
+          </li>
+         
+        </ul>
+      </div>
+    </div>
+  </nav> 
+  <!-- End Navigation -->
+
+<div class="container">
+<!-- Header -->
+<h1>A Look at Health Care</h1>
+
+<!-- Tableau -->
+<div>
+  <div class='tableauPlaceholder' id='viz1565585820833' style='position: relative'>
+    <noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;he&#47;healthcare_15650513726220&#47;HealthCareExpense&#47;1_rss.png' style='border: none' />
+    </a></noscript><object class='tableauViz'  style='display:none;'>
+    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+    <param name='embed_code_version' value='3' /> <param name='site_root' value='' />
+    <param name='name' value='healthcare_15650513726220&#47;HealthCareExpense' />
+    <param name='tabs' value='yes' />
+    <param name='toolbar' value='yes' />
+    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;he&#47;healthcare_15650513726220&#47;HealthCareExpense&#47;1.png' /> 
+    <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' />
+    <param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' />
+    <param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div> 
+    
+    <script type='text/javascript'> 
+    var divElement = document.getElementById('viz1565585820833');                    
+    var vizElement = divElement.getElementsByTagName('object')[0];                    
+    vizElement.style.width='1016px';vizElement.style.height='1014px';                   
+    var scriptElement = document.createElement('script');                    
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+    </script>
+    
+</div>
+<!-- end Tableau -->
+
+</br>
+<div>
+<h3>Expenditure in Millions of $US</h3>
+
+    {{data_index|safe}}
+</div>
+</br>
+<div>
+    <h3>Expenditure Per Person in Thousands of $US</h3>
+    
+    {{person_index|safe}}
+</div>
+
+</div>
+
+</br>
+</br>
+</br>
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Diana Dinshaw HealthCare 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+</body>
+</html>
